@@ -55,6 +55,7 @@ app.use(
 	graphqlHTTP({
 		schema: graphqlSchema,
 		rootValue: graphqlResolver,
+		graphiql: true,
 	}),
 );
 
@@ -68,7 +69,7 @@ app.use((error, req, res, next) => {
 
 mongoose
 	.connect(
-		'mongodb+srv://gags:gags123@alpha.tlchy.mongodb.net/restApi?retryWrites=true&w=majority',
+		'mongodb+srv://gags:gags123@alpha.tlchy.mongodb.net/graphql?retryWrites=true&w=majority',
 		{
 			useUnifiedTopology: true,
 			useNewUrlParser: true,
